@@ -1,0 +1,225 @@
+[gd_resource type="Theme" load_steps=24 format=3 uid="uid://hagao0caphy1"]
+
+[ext_resource type="Texture2D" uid="uid://i3ktnpv3aa6u" path="res://addons/monodark/resources/textures/console_clear.png" id="1_v5h5a"]
+[ext_resource type="FontFile" uid="uid://blp3n3tu6iw32" path="res://addons/monodark/resources/fonts/JetBrainsMono-SemiBold.ttf" id="2_c062c"]
+[ext_resource type="FontFile" uid="uid://dm1vo83oh5en3" path="res://addons/monodark/resources/fonts/JetBrainsMono-SemiBoldItalic.ttf" id="3_w5bxn"]
+[ext_resource type="FontFile" uid="uid://cb6q4x6bc1xl" path="res://addons/monodark/resources/fonts/JetBrainsMono-ThinItalic.ttf" id="4_1tfhq"]
+[ext_resource type="FontFile" uid="uid://fcfowu4h4tq" path="res://addons/monodark/resources/fonts/JetBrainsMono-Thin.ttf" id="5_vqnfn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ybhpo"]
+content_margin_left = 7.0
+content_margin_top = 5.0
+content_margin_right = 7.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0627451, 0.0666667, 0.0666667, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jp75j"]
+content_margin_left = 7.0
+content_margin_top = 5.0
+content_margin_right = 7.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0850709, 0.0897256, 0.0897256, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gsn35"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.0784314)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q131f"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.0384898, 0.044283, 0.0462122, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ptf31"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.0384898, 0.044283, 0.0462122, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lyvf4"]
+content_margin_left = 0.0
+content_margin_top = 3.0
+content_margin_right = 0.0
+content_margin_bottom = 3.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.423651, 0.423651, 0.42365, 1)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uybbb"]
+content_margin_left = 0.0
+content_margin_top = 4.0
+content_margin_right = 0.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.423651, 0.423651, 0.42365, 1)
+corner_detail = 6
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a1rbe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m7p4u"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.113725, 0.117647, 0.121569, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tpxy"]
+content_margin_left = 7.0
+content_margin_top = 5.0
+content_margin_right = 7.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0627451, 0.0666667, 0.0666667, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bs844"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6bsv5"]
+content_margin_left = 10.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i2epv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_glrko"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 1, 1, 0.0784314)
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qfmao"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.0384898, 0.044283, 0.0462122, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlce1"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(0.0384898, 0.044283, 0.0462122, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+corner_detail = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fds5o"]
+content_margin_left = 4.0
+content_margin_right = 2.0
+bg_color = Color(0.197937, 0.197937, 0.197937, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.423651, 0.423651, 0.42365, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mtaav"]
+content_margin_left = 4.0
+content_margin_right = 2.0
+bg_color = Color(0.197937, 0.197937, 0.197937, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.423651, 0.423651, 0.42365, 1)
+
+[resource]
+default_font = ExtResource("5_vqnfn")
+default_font_size = 14
+Button/styles/disabled = SubResource("StyleBoxFlat_ybhpo")
+Button/styles/focus = SubResource("StyleBoxFlat_ybhpo")
+Button/styles/hover = SubResource("StyleBoxFlat_jp75j")
+Button/styles/hover_mirrored = SubResource("StyleBoxFlat_ybhpo")
+Button/styles/hover_pressed = SubResource("StyleBoxFlat_ybhpo")
+Button/styles/hover_pressed_mirrored = SubResource("StyleBoxFlat_ybhpo")
+Button/styles/normal = SubResource("StyleBoxFlat_ybhpo")
+Button/styles/normal_mirrored = SubResource("StyleBoxFlat_ybhpo")
+Button/styles/pressed = SubResource("StyleBoxFlat_ybhpo")
+Button/styles/pressed_mirrored = SubResource("StyleBoxFlat_ybhpo")
+HBoxContainer/constants/separation = 0
+HScrollBar/styles/grabber = SubResource("StyleBoxFlat_gsn35")
+HScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_q131f")
+HScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_ptf31")
+HScrollBar/styles/scroll = SubResource("StyleBoxFlat_lyvf4")
+HScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_uybbb")
+LineEdit/icons/clear = ExtResource("1_v5h5a")
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_a1rbe")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_m7p4u")
+Panel/styles/panel = SubResource("StyleBoxFlat_8tpxy")
+RichTextLabel/fonts/bold_font = ExtResource("2_c062c")
+RichTextLabel/fonts/bold_italics_font = ExtResource("3_w5bxn")
+RichTextLabel/fonts/italics_font = ExtResource("4_1tfhq")
+RichTextLabel/fonts/mono_font = ExtResource("5_vqnfn")
+RichTextLabel/fonts/normal_font = ExtResource("5_vqnfn")
+RichTextLabel/styles/focus = SubResource("StyleBoxEmpty_bs844")
+RichTextLabel/styles/normal = SubResource("StyleBoxEmpty_6bsv5")
+ScrollContainer/styles/panel = SubResource("StyleBoxEmpty_i2epv")
+VBoxContainer/constants/separation = 0
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_glrko")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_qfmao")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_tlce1")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_fds5o")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_mtaav")

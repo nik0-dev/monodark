@@ -1,0 +1,302 @@
+[gd_scene load_steps=33 format=3 uid="uid://c6kgbrc7nu61e"]
+
+[ext_resource type="Theme" uid="uid://hagao0caphy1" path="res://addons/monodark/data/Styles/console_theme.tres" id="1_mw7jv"]
+[ext_resource type="Script" path="res://addons/monodark/scripts/console.gd" id="1_saggi"]
+[ext_resource type="LabelSettings" uid="uid://cejbidirgdmi6" path="res://addons/monodark/data/Styles/console_text.tres" id="3_m67a3"]
+[ext_resource type="FontFile" uid="uid://fcfowu4h4tq" path="res://addons/monodark/data/Fonts/JetBrainsMono-Thin.ttf" id="4_m0bbd"]
+[ext_resource type="FontFile" uid="uid://blp3n3tu6iw32" path="res://addons/monodark/data/Fonts/JetBrainsMono-SemiBold.ttf" id="5_i23y5"]
+[ext_resource type="FontFile" uid="uid://cb6q4x6bc1xl" path="res://addons/monodark/data/Fonts/JetBrainsMono-ThinItalic.ttf" id="6_3gwea"]
+[ext_resource type="FontFile" uid="uid://dm1vo83oh5en3" path="res://addons/monodark/data/Fonts/JetBrainsMono-SemiBoldItalic.ttf" id="7_ngi88"]
+[ext_resource type="Script" path="res://addons/monodark/console_font_increase.gd" id="8_fxxtv"]
+[ext_resource type="Texture2D" uid="uid://i3ktnpv3aa6u" path="res://addons/monodark/textures/console_clear.png" id="8_wtqpd"]
+[ext_resource type="Texture2D" uid="uid://bkf1o3bjk5i8u" path="res://addons/monodark/textures/collapse.png" id="9_w6aa6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eevm6"]
+bg_color = Color(0.137255, 0.14902, 0.152941, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+shadow_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yue4d"]
+content_margin_left = 5.0
+content_margin_top = 5.0
+content_margin_right = 5.0
+content_margin_bottom = 5.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ku2u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0knc"]
+content_margin_left = 25.0
+content_margin_right = 5.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jw24o"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0.113725, 0.117647, 0.121569, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h7e60"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6v8be"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xlhik"]
+bg_color = Color(1, 1, 1, 0.0784314)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcy33"]
+bg_color = Color(1, 1, 1, 0.156863)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xj1vx"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yok04"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pahpo"]
+content_margin_left = 10.0
+content_margin_right = 10.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a3nmr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_whdae"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kur6f"]
+bg_color = Color(0.0623803, 0.0651249, 0.0678692, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_835gm"]
+bg_color = Color(0.113725, 0.117647, 0.121569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_orn4w"]
+bg_color = Color(0.113725, 0.117647, 0.121569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3c505"]
+bg_color = Color(0.113725, 0.117647, 0.121569, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3qnop"]
+bg_color = Color(0.113725, 0.117647, 0.121569, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8ik7y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uhsc8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_u5trv"]
+bg_color = Color(0, 0, 0, 0)
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0, 0, 0, 1)
+border_blend = true
+corner_radius_bottom_right = 1
+
+[node name="Console" type="Control"]
+custom_minimum_size = Vector2(280, 100)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -869.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_mw7jv")
+script = ExtResource("1_saggi")
+console_foreground_style = ExtResource("3_m67a3")
+metadata/_edit_vertical_guides_ = [-561.0]
+
+[node name="Body" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Backfill" type="Panel" parent="Body"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_eevm6")
+
+[node name="ScrollView" type="ScrollContainer" parent="Body"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 23.0
+offset_bottom = -31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_yue4d")
+follow_focus = true
+
+[node name="Output" type="RichTextLabel" parent="Body/ScrollView"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 7
+focus_mode = 2
+theme_override_colors/selection_color = Color(1, 1, 1, 0.0784314)
+theme_override_fonts/normal_font = ExtResource("4_m0bbd")
+theme_override_fonts/bold_font = ExtResource("5_i23y5")
+theme_override_fonts/italics_font = ExtResource("6_3gwea")
+theme_override_fonts/bold_italics_font = ExtResource("7_ngi88")
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 14
+theme_override_font_sizes/italics_font_size = 14
+theme_override_font_sizes/bold_italics_font_size = 14
+theme_override_font_sizes/mono_font_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8ku2u")
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+selection_enabled = true
+
+[node name="BottomLayout" type="HBoxContainer" parent="Body"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Decor" type="Label" parent="Body/BottomLayout"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = ExtResource("4_m0bbd")
+theme_override_styles/normal = SubResource("StyleBoxFlat_h0knc")
+text = ">"
+label_settings = ExtResource("3_m67a3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Input" type="LineEdit" parent="Body/BottomLayout"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("4_m0bbd")
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_jw24o")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_h7e60")
+clear_button_enabled = true
+caret_blink = true
+
+[node name="FontSizeIncrease" type="Button" parent="Body/BottomLayout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_6v8be")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xlhik")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wcy33")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_xj1vx")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_yok04")
+text = "+"
+script = ExtResource("8_fxxtv")
+
+[node name="FontSizeDecrease" type="Button" parent="Body/BottomLayout"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_pahpo")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xlhik")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wcy33")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_a3nmr")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_whdae")
+text = "-
+"
+
+[node name="Header" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 24.0
+grow_horizontal = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_kur6f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_835gm")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_orn4w")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_3c505")
+theme_override_styles/focus = SubResource("StyleBoxFlat_3qnop")
+text = "- Developer Console -"
+
+[node name="Close" type="Button" parent="Header"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -21.0
+offset_top = 4.0
+offset_right = -5.0
+offset_bottom = 20.0
+grow_horizontal = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_8ik7y")
+icon = ExtResource("8_wtqpd")
+
+[node name="Collapse" type="Button" parent="Header"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_top = 4.0
+offset_right = -24.0
+offset_bottom = 20.0
+grow_horizontal = 0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_uhsc8")
+icon = ExtResource("9_w6aa6")
+
+[node name="ResizeHandle" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -6.0
+offset_top = -6.0
+offset_right = 5.0
+offset_bottom = 5.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_u5trv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u5trv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u5trv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_u5trv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u5trv")
+
+[node name="ResizeHandle2" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -7.0
+offset_top = 18.0
+offset_right = 4.0
+offset_bottom = 29.0
+grow_horizontal = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_u5trv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_u5trv")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_u5trv")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_u5trv")
+theme_override_styles/focus = SubResource("StyleBoxFlat_u5trv")

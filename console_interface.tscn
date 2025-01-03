@@ -1,0 +1,189 @@
+[gd_scene load_steps=14 format=3 uid="uid://dfnplr233udax"]
+
+[ext_resource type="Theme" uid="uid://hagao0caphy1" path="res://addons/monodark/console_theme.tres" id="1_oagc4"]
+[ext_resource type="Script" path="res://addons/monodark/resources/scripts/console_interface.gd" id="2_434uk"]
+[ext_resource type="Texture2D" uid="uid://bymygqsnjegfw" path="res://addons/monodark/resources/textures/focus.png" id="3_g2db3"]
+[ext_resource type="Texture2D" uid="uid://bkf1o3bjk5i8u" path="res://addons/monodark/resources/textures/collapse.png" id="3_gtqne"]
+[ext_resource type="Texture2D" uid="uid://i3ktnpv3aa6u" path="res://addons/monodark/resources/textures/console_clear.png" id="4_ixlxw"]
+[ext_resource type="FontFile" uid="uid://fcfowu4h4tq" path="res://addons/monodark/resources/fonts/JetBrainsMono-Thin.ttf" id="5_ny1ug"]
+[ext_resource type="FontFile" uid="uid://cb6q4x6bc1xl" path="res://addons/monodark/resources/fonts/JetBrainsMono-ThinItalic.ttf" id="6_xycul"]
+[ext_resource type="FontFile" uid="uid://dm1vo83oh5en3" path="res://addons/monodark/resources/fonts/JetBrainsMono-SemiBoldItalic.ttf" id="7_74c2e"]
+[ext_resource type="FontFile" uid="uid://blp3n3tu6iw32" path="res://addons/monodark/resources/fonts/JetBrainsMono-SemiBold.ttf" id="8_15hue"]
+[ext_resource type="Texture2D" uid="uid://bpin4q2rc3e50" path="res://addons/monodark/resources/textures/options_menu.png" id="9_lblbf"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8tpxy"]
+content_margin_left = 7.0
+content_margin_top = 5.0
+content_margin_right = 7.0
+content_margin_bottom = 5.0
+bg_color = Color(0.0627451, 0.0666667, 0.0666667, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_34ysb"]
+bg_color = Color(0.144062, 0.144063, 0.144062, 1)
+border_width_left = 1
+border_width_right = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b324f"]
+
+[node name="ConsoleInterface" type="Control"]
+custom_minimum_size = Vector2(280, 100)
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 386.0
+grow_horizontal = 2
+theme = ExtResource("1_oagc4")
+script = ExtResource("2_434uk")
+
+[node name="MainContainer" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TopBarContainer" type="HBoxContainer" parent="MainContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="WindowHandle" type="Button" parent="MainContainer/TopBarContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+text = "< CONSOLE >"
+
+[node name="CollapseButton" type="Button" parent="MainContainer/TopBarContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+icon = ExtResource("3_gtqne")
+
+[node name="FocusButton" type="Button" parent="MainContainer/TopBarContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_mode = 0
+icon = ExtResource("3_g2db3")
+
+[node name="CloseButton" type="Button" parent="MainContainer/TopBarContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+icon = ExtResource("4_ixlxw")
+
+[node name="Filler2" type="Panel" parent="MainContainer/TopBarContainer"]
+custom_minimum_size = Vector2(14, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_stretch_ratio = 0.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_8tpxy")
+
+[node name="OutputContainer" type="ScrollContainer" parent="MainContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_34ysb")
+
+[node name="Output" type="RichTextLabel" parent="MainContainer/OutputContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 2
+theme_override_colors/selection_color = Color(1, 1, 1, 0.0784314)
+theme_override_fonts/normal_font = ExtResource("5_ny1ug")
+theme_override_fonts/italics_font = ExtResource("6_xycul")
+theme_override_fonts/bold_italics_font = ExtResource("7_74c2e")
+theme_override_fonts/bold_font = ExtResource("8_15hue")
+theme_override_font_sizes/bold_italics_font_size = 14
+theme_override_font_sizes/italics_font_size = 14
+theme_override_font_sizes/mono_font_size = 14
+theme_override_font_sizes/normal_font_size = 14
+theme_override_font_sizes/bold_font_size = 14
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+context_menu_enabled = true
+threaded = true
+selection_enabled = true
+
+[node name="MainBarContainer" type="HBoxContainer" parent="MainContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MenuButton" type="Button" parent="MainContainer/MainBarContainer"]
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_stretch_ratio = 0.0
+icon = ExtResource("9_lblbf")
+
+[node name="Input" type="LineEdit" parent="MainContainer/MainBarContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("5_ny1ug")
+theme_override_font_sizes/font_size = 14
+placeholder_text = "> enter a command"
+context_menu_enabled = false
+clear_button_enabled = true
+caret_blink = true
+
+[node name="ResizeVertical" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+offset_right = -17.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 10
+size_flags_stretch_ratio = 0.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_b324f")
+flat = true
+
+[node name="ResizeHorizontal" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -14.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 10
+size_flags_stretch_ratio = 0.0
+focus_mode = 0
+flat = true
+
+[node name="ResizeDiagonal" type="Button" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -28.0
+offset_top = -28.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 10
+size_flags_stretch_ratio = 0.0
