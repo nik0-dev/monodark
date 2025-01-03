@@ -135,7 +135,7 @@ func process_cmd(cmd: String):
 			converted_args.append(conv_type)
 		
 		while (arguments.size() < commands[text_command].arguments.size()): 
-			arguments.append(null)
+			arguments.append("")
 		
 		
 		commands[text_command].function.callv(arguments)
