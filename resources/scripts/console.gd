@@ -41,11 +41,11 @@ func _ready():
 	
 func _add_base_commands():
 	suppress_cmd_cfg_logs()
-	add_command(ConsoleCommand.new("help", help, {"command": TYPE_STRING}, "gives the user basic information about the console...\nwhen supplied with a command name it gives more information about the command.", 0))
-	add_command(ConsoleCommand.new("command_list", command_list, {}, "lists all the current registered commands and their usage",))
-	add_command(ConsoleCommand.new("about", about, {}, "gives more information about the console."))
-	add_command(ConsoleCommand.new("cls", cls, {}, "clears the console"))
-	add_command(ConsoleCommand.new("clear", cls, {}, "clears the console, an alias for %s" % cmd_ref("cls")))
+	add_command("help", help, {"command": TYPE_STRING}, "gives the user basic information about the console...\nwhen supplied with a command name it gives more information about the command.", 0)
+	add_command("command_list", command_list, {}, "lists all the current registered commands and their usage")
+	add_command("about", about, {}, "gives more information about the console.")
+	add_command("cls", cls, {}, "clears the console")
+	add_command("clear", cls, {}, "clears the console, an alias for %s" % cmd_ref("cls"))
 	enable_cmd_cfg_logs()
 	
 func _initialize_interface():
@@ -60,17 +60,17 @@ func _connect_signals():
 # ======== Methods ========
 
 ## Suppresses any logs from command configuration functions.
-func suppress_cmd_cfg_logs(): _echo_cfg_logs = false
+func suppress_cmd_cfg_logs(): _echo_cmd_cfg_logs = false
 ## Enables any logs from command configuration functions.
-func enable_cmd_cfg_logs(): _echo_cfg_logs = true
+func enable_cmd_cfg_logs(): _echo_cmd_cfg_logs = true
 
-## Add a collection of commands to the console registry
-func add_commands(cmd_list: Array[ConsoleCommand]):
-	for cmd in cmd_list:
-		add_command(cmd)
-		
-## Add a command to the console registry.
-func add_command(cmd: ConsoleCommand):
+## Adds an existing command to the console registry if it's able.
+func add_existing_command(cmd: ConsoleCommand):
+	add_command(cmd.name, cmd.function, cmd.arguments, cmd.description, cmd.required)
+
+## Add a command to the console registry if it's able.
+func add_command(name: String, function: Callable, arguments: Dictionary = {}, description: String = "", required: int = 0):
+	var cmd = ConsoleCommand.new(name, function, arguments, description, required)
 	if cmd.name.is_empty():
 		_push_cmd_cfg_log(broadcast_error.bind("Failed to add command, name cannot be empty."))
 		return
@@ -116,16 +116,28 @@ func process_cmd(cmd: String):
 	var text_split = cmd.split(" ")
 	var text_command = text_split[0]
 	if commands.has(text_command):
-		var arguments := text_split.slice(1)
+		var arguments : Array = text_split.slice(1)
 		
 		if arguments.size() < commands[text_command].required:
-			log_error("Too few arguments! Required < %d >" % commands[text_command].required)
+			log_error("Not enough arguments, command requires %d argument(s)." % commands[text_command].required)
 			return
 		elif arguments.size() > commands[text_command].arguments.size():
-			log_error("Too many arguments! < %d > Max" % commands[text_command].arguments.size())
+			log_error("Too many arguments, command has a maximum of %d argument(s)." % commands[text_command].arguments.size())
 			return
 
-		while (arguments.size() < commands[text_command].arguments.size()): arguments.append("")
+		var converted_args : Array
+		for i in range(arguments.size()):
+			var cmd_obj = commands[text_command] as ConsoleCommand
+			var conv_type = cmd_obj.arg_to_type(arguments[i], cmd_obj.arguments.values()[i])
+			if conv_type == null:
+				log_error("Invalid parameter types, use %s %s for more information." % [cmd_ref("help"), cmd_ref(text_command)])
+				return 
+			converted_args.append(conv_type)
+		
+		while (arguments.size() < commands[text_command].arguments.size()): 
+			arguments.append(null)
+		
+		
 		commands[text_command].function.callv(arguments)
 	else:
 		log_error("Command not found. For a list of all commands type %s." % cmd_ref("command_list"))
@@ -197,7 +209,7 @@ func help(cmd: String = ""):
 		if commands.has(cmd):
 			write_line("\n[b][i]Parameters that are [u]underlined[/u] are required.[/i][/b]")
 			write_line("[b]> syntax: [/b]" + (commands[cmd] as ConsoleCommand).get_as_rich_string())
-			write_line("[b]> required-args: [/b]%s" % str(commands[cmd].required))
+			write_line("[b]> required-args: [/b]%s" % color(str(commands[cmd].required), Color.CYAN))
 			write_line("[b]> description: [/b]%s\n" % color(commands[cmd].description, Color.BISQUE))
 		else:
 			log_error("No command with that name found.")

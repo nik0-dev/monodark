@@ -28,9 +28,8 @@ func get_arguments_as_string():
 	for i in range(0, arguments.size()):
 		var type = type_string(arguments.values()[i])
 		s += arguments.keys()[i] + ": " if !arguments.keys()[i].is_empty() else ""
-		s += type if i < required else ("[u][b]%s[/b][/u]" % type)
-		if i != arguments.size() - 1:
-			s += ", "
+		s += ("[u][b]%s[/b][/u]" % type) if i+1 <= required else type 
+		if i != arguments.size() - 1: s += ", "
 	if arguments.size() > 0: s += ">"
 	return s
 
